@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+    <!-- Custom styles for this template -->
+    <!--link href="../signin.css" rel="stylesheet"-->
+    <link rel="stylesheet" href ="{% static 'bootstrap/css/signin.css' %}">
+    </head>
+<body>
+    <!--
+<form action="good" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="书名"><br>
+    <input type="file" name="icon"><br>
+    <input type="submit" value="提交">
+</form>
+-->
+<div class="container">
+ 
+    <form class="form-signin" action="good" method="post" enctype="multipart/form-data">
+        
+      
+<!--
+    <h2 class="form-signin-heading">算法展示</h2>
+      <label for="inputUsername" class="sr-only">username</label>
+      <input type="text" id="inputUsername" name="username" class="form-control" placeholder="username" required autofocus>
+      <label for="inputPassword" class="sr-only">password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="password" required>
+-->
+<label for="inputAlgorithm" >选择待查询的文件</label>
+      <input type="file" name= "inputFile" id="inputFile">
+      <br />
+
+      <label for="inputAlgorithm" >选择算法</label>
+      <select class="form-control", name="inputAlgorithm", id="inputAlgorithm">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+      </select>
+      <br />
+
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit" id="btn">登录</button>
+       {{wronglyInput}}<br>
+       {% csrf_token %}
+    </form>
+
+</body>
+</html>
